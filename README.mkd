@@ -20,8 +20,8 @@ Dragon Rock contains 636 unique terms out of 1429 total, which means total of 63
 
 ![](https://github.com/vitalius/BinaryTree/raw/master/graphs/dragon-fig1.png)
 
-The difference between Ordered and Unordered searches is visible, however, due to all the noise from Java's VM it is hard
-to approximate the function that best fits the results.
+The difference between Ordered and Unordered search times is visible, however, due to all the noise from Java's VM 
+and unbalace in trees, it is hard to approximate the function that best fits the results.
 
 Since the number of unique terms grows approximately linearly with the total number of terms
 
@@ -35,12 +35,12 @@ Looks better but still too noisy for approximation. How about we copy/paste the 
 
 ![](https://github.com/vitalius/BinaryTree/raw/master/graphs/dragon-fig4.png)
 
-We now have enough data to start approximating, however the Binary Tree simply stops growing after all unique terms are exhausted
+We now have enough data to start approximating, however the Binary Tree stops growing after all unique terms are exhausted
 (after about 2000 terms)
 
 ![](https://github.com/vitalius/BinaryTree/raw/master/graphs/dragon-fig5.png)
 
-We clearly need a better corpus.
+Clearly, we need a better corpus.
 
 ## Experiment 2
 The Adventures of Sherlock Holmes by Sir Arthur Conan Doyle (holmes.txt) contains 9580 unique words out of 120376 total!
@@ -54,7 +54,7 @@ Solving for c and taking few experiment data points we find that on this machine
 
 ![](https://github.com/vitalius/BinaryTree/raw/master/graphs/holmes-fig4.png)
 
-Similarly when we zoom-in on Ordered Binary Tree search times, t = c*log(n) and c ~= 0.000055.
+Similarly when we zoom-in on Ordered Binary Tree data, it begins to resemble a logarithmic, t = c*log(n) and c ~= 0.000055.
 
 ![](https://github.com/vitalius/BinaryTree/raw/master/graphs/holmes-fig5.png)
 
