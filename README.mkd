@@ -49,12 +49,12 @@ The Adventures of Sherlock Holmes by Sir Arthur Conan Doyle (holmes.txt) contain
 
 Unordered Binary Tree looks linear while Ordered is way at the bottom accross entire graph.
 
-We can now approximate Unordered Binary Tree search times. The linear function with respect to n, t = c*n.
+We can now approximate Unordered Binary Tree search times. The linear function with respect to n: t = c*n.
 Solving for c and taking few experiment data points we find that on this machine, c ~= 0.000016.
 
 ![](https://github.com/vitalius/BinaryTree/raw/master/graphs/holmes-fig4.png)
 
-Similarly when we zoom-in on Ordered Binary Tree data, it begins to resemble a logarithmic, t = c*log(n) and c ~= 0.000055.
+Similarly when we zoom-in on Ordered Binary Tree data, it begins to resemble a logarithmic curve: t = c*log(n) where c ~= 0.000055.
 
 ![](https://github.com/vitalius/BinaryTree/raw/master/graphs/holmes-fig5.png)
 
