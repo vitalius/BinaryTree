@@ -36,7 +36,7 @@ Looks better but still too noisy for approximation. How about we copy/paste the 
 ![](https://github.com/vitalius/BinaryTree/raw/master/graphs/dragon-fig4.png)
 
 We now have enough data to start approximating, however the Binary Tree simply stops growing after all unique terms are exhausted
-(around 0.005 milliseconds)
+(after about 2000 terms)
 
 ![](https://github.com/vitalius/BinaryTree/raw/master/graphs/dragon-fig5.png)
 
