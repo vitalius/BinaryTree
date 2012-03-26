@@ -1,20 +1,20 @@
-# What is it?
-Attempt to empirically show the difference in time complexity between searching Ordered and Unordered Binary Tree.
+## What is it?
+Attempt to empirically show the difference in time complexity between Ordered and Unordered Binary Tree search.
 
-# Setup
-We're going to populate Ordered and Unordered Binary Trees with nodes that have strings for keys. In case of Ordered tree,
-String.compareTo() is used to pick keys based on lexicographical order. While Unordered tree is populated by randomly
-picking a path (left/right) from root to the leaf level.
+## Setup
+We're going to populate Ordered and Unordered Binary Trees with nodes that have strings of text for keys. In case of Ordered tree,
+String.compareTo() is used to order keys based on lexicographical order. While Unordered tree is populated by randomly
+picking a path (left/right) from root to the leaf level. See Ordered.java and Unordered.java for source code.
 
 The expected results for Ordered Binary Tree search times are O(c*log(n)), and O(c*n) for Unordered (pre-order tree traversal).
 Where n is the number of nodes (unique terms) in the Binary Tree and c is some constant representing the beefines of my computer.
 
-# Procedures
+## Procedures
 1. Build Ordered/Unordered Binary Tree with sub-set (size n) of terms from the corpus.
 2. Compute the average search time by searching for every term in the tree and then taking the average.
 3. Perform the experiment as the size of sub-set expands from 1,...,entire corpus.
 
-# Experiment 1
+## Experiment 1
 A short story by Ellena Ashley, The Dragon Rock is used for the first experiment (dragon-rock.txt).
 Dragon Rock contains 636 unique terms out of 1429 total, which means total of 636 nodes in a Binary Tree, and depth of 7 when tree is balanced.
 
@@ -42,7 +42,7 @@ We now have enough data to start approximating, however the Binary Tree simply s
 
 We clearly need a better corpus.
 
-# Experiment 2
+## Experiment 2
 Here we use The Adventures of Sherlock Holmes by Sir Arthur Conan Doyle (holmes.txt) which contains 9580 unique words out of 120376 total!
 
 ![](https://github.com/vitalius/BinaryTree/raw/master/graphs/holmes-fig1.png)
@@ -66,5 +66,5 @@ Similarly for Ordered Binary Tree, t = c*log(n) and c ~= 0.000055.
 
 ![](https://github.com/vitalius/BinaryTree/raw/master/graphs/holmes-fig5.png)
 
-# Wrap-up
+## Wrap-up
 We have empirically shown the difference in time complexity for searching an Unordered (pre-order tree traversal) and Ordered Binary Trees.
