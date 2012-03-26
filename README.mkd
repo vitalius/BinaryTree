@@ -1,1 +1,68 @@
-Expl
+# What is it?
+Attempt to empirically show the difference in time complexity between searching Ordered and Unordered Binary Tree.
+
+# Setup
+We're going to populate Ordered and Unordered Binary Trees with nodes that have strings for keys. In case of Ordered tree,
+String.compareTo() is used to pick keys based on lexicographical order. While Unordered tree is populated by randomly
+picking a path (left/right) from root to the leaf level.
+
+The expected results for Ordered Binary Tree search times are O(c*log(n)), and O(c*n) for Unordered (pre-order tree traversal).
+Where n is the number of nodes (unique terms) in the Binary Tree and c is some constant representing the beefines of my computer.
+
+# Procedures
+1. Build Ordered/Unordered Binary Tree with sub-set (size n) of terms from the corpus.
+2. Compute the average search time by searching for every term in the tree and then taking the average.
+3. Perform the experiment as the size of sub-set expands from 1,...,entire corpus.
+
+# Experiment 1
+A short story by Ellena Ashley, The Dragon Rock is used for the first experiment (dragon-rock.txt).
+Dragon Rock contains 636 unique terms out of 1429 total, which means total of 636 nodes in a Binary Tree, and depth of 7 when tree is balanced.
+
+![](https://github.com/vitalius/BinaryTree/raw/master/dragon-fig1.png)
+
+The difference between Ordered and Unordered searches is visible, however, due to all the noise from Java's VM it is hard
+to approximate the function that best fits the results.
+
+Since the number of unique terms grows approximately linearly with the total number of terms
+
+![](https://github.com/vitalius/BinaryTree/raw/master/dragon-fig2.png)
+
+Let's go ahead and use total term count
+
+![](https://github.com/vitalius/BinaryTree/raw/master/dragon-fig3.png)
+
+This looks a better but still too noisy for approximation. How about we copy/paste the story 9 times.
+
+![](https://github.com/vitalius/BinaryTree/raw/master/dragon-fig4.png)
+
+We now have enough data to start approximating, however the Binary Tree simply stops growing after all unique terms are exhausted
+(around 0.005 milliseconds)
+
+![](https://github.com/vitalius/BinaryTree/raw/master/dragon-fig5.png)
+
+We clearly need a better corpus.
+
+# Experiment 2
+Here we use The Adventures of Sherlock Holmes by Sir Arthur Conan Doyle (holmes.txt) which contains 9580 unique words out of 120376 total!
+
+![](https://github.com/vitalius/BinaryTree/raw/master/holmes-fig1.png)
+
+Unordered Binary Tree search times clearly look linear.
+
+![](https://github.com/vitalius/BinaryTree/raw/master/holmes-fig2.png)
+
+Similarly to Dragon Rock, uniqueness of terms is also approximately linear to the total number of terms.
+
+![](https://github.com/vitalius/BinaryTree/raw/master/holmes-fig3.png)
+
+Time to approximate. We see that Unordered Binary Tree search times are linear with respect to n, t = c*n.
+Solving for c and taking few experiment data points we find that on this machine, c ~= 0.000016.
+
+![](https://github.com/vitalius/BinaryTree/raw/master/holmes-fig4.png)
+
+Similarly for Ordered Binary Tree, t = c*log(n) and c ~= 0.000055.
+
+![](https://github.com/vitalius/BinaryTree/raw/master/holmes-fig5.png)
+
+# Wrap-up
+We have empirically shown the difference in time complexity for searching an Unordered (pre-order tree traversal) and Ordered Binary Trees.

@@ -1,0 +1,127 @@
+data = load("dragon-uniq-output.csv");
+x_max = size(data)(1);
+x     = data(:,1);
+ord   = data(:,2);
+uord  = data(:,3);
+depth = data(:,4);
+p = plot(x, uord, "3", x, ord, "1");
+axis([0 x_max 0.00 0.02]);
+title("Average look-up times in Dragon Rock (unique terms)");
+legend("Unordered, pre-order walk", "Ordered, String.compareTo() order");
+xlabel("unique terms (n)");
+ylabel("Average look-up time (milliseconds)");
+set(p, "LineWidth", 1);
+set(gca,'FontSize', 7);
+
+data = load("dragon-uniq.csv");
+p = plot(data(:,1), data(:,2));
+title("Unique terms in Dragon Rock");
+xlabel("Number of terms");
+ylabel("Number of unique terms");
+set(p, "LineWidth", 2);
+
+data = load("dragon-output.csv");
+x_max = size(data)(1)*10;
+x     = data(:,1);
+ord   = data(:,2);
+uord  = data(:,3);
+depth = data(:,4);
+p = plot(x, uord, "3", x, ord, "1");
+axis([0 x_max 0.00 0.02]);
+title("Average look-up times in Dragon Rock");
+legend("Unordered, pre-order walk", "Ordered, String.compareTo() order");
+xlabel("terms (n)");
+ylabel("Average look-up time (milliseconds)");
+set(p, "LineWidth", 1);
+set(gca,'FontSize', 7);
+
+data = load("dragon-x-output.csv");
+x_max = size(data)(1)*10;
+x     = data(:,1);
+ord   = data(:,2);
+uord  = data(:,3);
+depth = data(:,4);
+p = plot(x, uord, "3", x, ord, "1");
+axis([0 x_max 0.00 0.02]);
+title("Average look-up times in Dragon Rock x9");
+legend("Unordered, pre-order walk", "Ordered, String.compareTo() order");
+xlabel("terms (n)");
+ylabel("Average look-up time (milliseconds)");
+set(p, "LineWidth", 1);
+set(gca,'FontSize', 7);
+
+data = load("dragon-x-uniq.csv");
+p = plot(data(:,1), data(:,2));
+title("Unique terms in Dragon Rock x9");
+xlabel("Number of terms");
+ylabel("Number of unique terms");
+set(p, "LineWidth", 2);
+
+
+
+data = load("holmes-uniq-output.csv");
+x_max = size(data)(1)*10;
+x     = data(:,1);
+ord   = data(:,2);
+uord  = data(:,3);
+depth = data(:,4);
+p = plot(x, uord, "3", x, ord, "1");
+axis([0 x_max 0.00 0.2]);
+title("Average look-up times in The Adventures of Sherlock Holmes");
+legend("Unordered, pre-order walk", "Ordered, String.compareTo() order", "location", "southeast");
+xlabel("unique terms (n)");
+ylabel("Average look-up time (milliseconds)");
+set(p, "LineWidth", 1);
+set(gca,'FontSize', 7);
+
+data = load("holmes-uniq.csv");
+p = plot(data(:,1), data(:,2));
+title("Unique terms in The Adventures of Sherlock Holmes");
+xlabel("term count");
+ylabel("unique terms");
+set(p, "LineWidth", 2);
+
+
+data = load("holmes-output.csv");
+x_max = size(data)(1)*100;
+x     = data(:,1);
+ord   = data(:,2);
+uord  = data(:,3);
+depth = data(:,4);
+p = plot(x, uord, "3", x, ord, "1");
+axis([0 x_max 0.00 0.2]);
+title("Average look-up times in Ordered and Unordered Binary Tree using The Adventures of Sherlock Holmes");
+legend("Unordered, pre-order walk", "Ordered, String.compareTo() order", "location", "southeast");
+xlabel("Number of words (n)");
+ylabel("Average look-up time (milliseconds)");
+set(p, "LineWidth", 1);
+set(gca,'FontSize', 7);
+
+data = load("holmes-uniq-output.csv");
+x_max = size(data)(1)*10;
+x     = data(:,1);
+uord  = data(:,3);
+aprox = x.*0.000016;
+p = plot(x, uord, "3", x, aprox, "1");
+axis([0 x_max 0.00 0.2]);
+title("Average look-up times in The Adventures of Sherlock Holmes");
+legend("Unordered, pre-order walk", "O(c*n); c=0.000016", "location", "southeast");
+xlabel("unique terms (n)");
+ylabel("Average look-up time (milliseconds)");
+set(p, "LineWidth", 1);
+set(gca,'FontSize', 7);
+
+data = load("holmes-uniq-output.csv");
+x_max = size(data)(1)*10;
+x     = data(:,1);
+ord   = data(:,2);
+aprox = log(x).*0.000055;
+p = plot(x, ord, "3", x, aprox, "1");
+axis([0 x_max 0.00 0.001]);
+title("Average look-up times in The Adventures of Sherlock Holmes");
+legend("Ordered, String.compareTo() order", "O(c*log(n)); c=0.000055", "location", "southeast");
+xlabel("unique terms (n)");
+ylabel("Average look-up time (milliseconds)");
+set(p, "LineWidth", 1);
+set(gca,'FontSize', 7);
+

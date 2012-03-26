@@ -1,53 +1,14 @@
 /**
  * User: vitaliy
  * Date: 3/24/12
- * Time: 2:49 PM
+ * Time: 9:35 PM
  */
-public class BinaryTree {
-    public Node root;
+public abstract class BinaryTree {
+    Node root;
     
-
     public BinaryTree() {
         root = null;
     }
-
-
-    public Node insert(Node current, Node leaf) {
-        if (null == leaf)
-            return null;
-        
-        if (null == current)
-            return leaf;
-
-        int cmp_score = current.compare(leaf);
-
-        if (cmp_score == 0)
-            return current;
-
-        if (cmp_score > 0)
-            current.left = insert(current.left, leaf);
-        else
-            current.right = insert(current.right, leaf);
-
-        return current;
-    }
-
-
-    public boolean find(Node current, Node s) {
-        if (null == current)
-            return false;
-
-        int cmp_score = current.compare(s);
-
-        if (cmp_score == 0)
-            return true;
-
-        if (cmp_score > 0)
-            return find(current.left, s);
-        else
-            return find(current.right, s);
-    }
-
 
     public boolean populate(String [] data) {
         for (String s : data) {
@@ -57,8 +18,29 @@ public class BinaryTree {
         return true;
     }
 
+    private int depth(Node c) {
+        if (null == c)
+            return 0;
+        
+        int h1 = 1;
+        int h2 = 1;
+
+        if (null != c.left)
+            h1 += depth(c.left);
+        if (null != c.right)
+            h2 += depth(c.right);
+
+        return (h1 > h2) ? h1 : h2;
+    }
+    
+    public int depth() {
+        return depth(root);
+    }
 
     public boolean find(String s) {
         return find(root, new Node(s));
     }
+    
+    public abstract boolean find (Node c, Node s);
+    public abstract Node insert(Node c, Node s);
 }
