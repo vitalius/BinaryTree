@@ -4,7 +4,7 @@ Attempt to empirically show the difference in time complexity between Ordered an
 ## Setup
 We're going to populate Ordered and Unordered Binary Trees with nodes that have strings of text for keys. In case of Ordered tree,
 String.compareTo() is used to order keys based on lexicographical order. While Unordered tree is populated by randomly
-picking a path (left/right) from root to the leaf level. See Ordered.java and Unordered.java for source code.
+picking a path (left/right) from root to the leaf level. See Ordered.java and Unordered.java
 
 The expected results for Ordered Binary Tree search times are O(c*log(n)), and O(c*n) for Unordered (pre-order tree traversal).
 Where n is the number of nodes (unique terms) in the Binary Tree and c is some constant representing the beefines of my computer.
@@ -27,7 +27,7 @@ Since the number of unique terms grows approximately linearly with the total num
 
 ![](https://github.com/vitalius/BinaryTree/raw/master/graphs/dragon-fig2.png)
 
-Let's go ahead and use total term count
+Let's go ahead and use all of the terms.
 
 ![](https://github.com/vitalius/BinaryTree/raw/master/graphs/dragon-fig3.png)
 
@@ -43,15 +43,15 @@ We now have enough data to start approximating, however the Binary Tree simply s
 We clearly need a better corpus.
 
 ## Experiment 2
-Here we use The Adventures of Sherlock Holmes by Sir Arthur Conan Doyle (holmes.txt) which contains 9580 unique words out of 120376 total!
+The Adventures of Sherlock Holmes by Sir Arthur Conan Doyle (holmes.txt) contains 9580 unique words out of 120376 total!
 
 ![](https://github.com/vitalius/BinaryTree/raw/master/graphs/holmes-fig1.png)
 
-Unordered Binary Tree search times clearly look linear.
+Unordered Binary Tree search times look linear.
 
 ![](https://github.com/vitalius/BinaryTree/raw/master/graphs/holmes-fig2.png)
 
-Similarly to Dragon Rock, uniqueness of terms is also approximately linear to the total number of terms.
+Similarly to Dragon Rock, uniqueness of terms is approximately linear to the total number of terms.
 
 ![](https://github.com/vitalius/BinaryTree/raw/master/graphs/holmes-fig3.png)
 
@@ -62,7 +62,8 @@ Solving for c and taking few experiment data points we find that on this machine
 
 ![](https://github.com/vitalius/BinaryTree/raw/master/graphs/holmes-fig4.png)
 
-Similarly for Ordered Binary Tree, t = c*log(n) and c ~= 0.000055.
+Similarly for Unordered Binary Tree, t = c*log(n) and c ~= 0.000055. Due to very small deltas in time,
+it seems we zoomed on Java's VM noise, which is responsible for garbage collection, code portability, etc.
 
 ![](https://github.com/vitalius/BinaryTree/raw/master/graphs/holmes-fig5.png)
 

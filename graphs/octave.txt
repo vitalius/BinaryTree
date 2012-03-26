@@ -117,7 +117,7 @@ x     = data(:,1);
 ord   = data(:,2);
 aprox = log(x).*0.000055;
 p = plot(x, ord, "3", x, aprox, "1");
-axis([0 x_max 0.00 0.001]);
+axis([0 x_max 0.00 0.003]);
 title("Average look-up times in The Adventures of Sherlock Holmes");
 legend("Ordered, String.compareTo() order", "O(c*log(n)); c=0.000055", "location", "southeast");
 xlabel("unique terms (n)");
