@@ -49,14 +49,6 @@ The Adventures of Sherlock Holmes by Sir Arthur Conan Doyle (holmes.txt) contain
 
 Unordered Binary Tree search times look linear.
 
-![](https://github.com/vitalius/BinaryTree/raw/master/graphs/holmes-fig2.png)
-
-Similarly to Dragon Rock, uniqueness of terms is approximately linear to the total number of terms.
-
-![](https://github.com/vitalius/BinaryTree/raw/master/graphs/holmes-fig3.png)
-
-Looks good so far.
-
 We can now approximate Unordered Binary Tree search times. The function looks linear with respect to n, t = c*n.
 Solving for c and taking few experiment data points we find that on this machine, c ~= 0.000016.
 
