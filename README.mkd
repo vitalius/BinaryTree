@@ -62,8 +62,7 @@ Solving for c and taking few experiment data points we find that on this machine
 
 ![](https://github.com/vitalius/BinaryTree/raw/master/graphs/holmes-fig4.png)
 
-Similarly for Unordered Binary Tree, t = c*log(n) and c ~= 0.000055. Due to very small time deltas,
-it seems we've zoomed on Java's VM artifacts responsible for garbage collection, code portability, etc.
+Similarly for Ordered Binary Tree, t = c*log(n) and c ~= 0.000055.
 
 ![](https://github.com/vitalius/BinaryTree/raw/master/graphs/holmes-fig5.png)
 
