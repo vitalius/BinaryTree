@@ -51,7 +51,7 @@ Search in Unordered Binary Tree looks linear with respect to n while Ordered is 
 
 We can now approximate Unordered Binary Tree search. Linear function should look something like t = c*n where we 
 know n (number of nodes) and t (milliseconds) average time it takes to find a node.
-Averaging c by taking few experiment data points we find that on this machine, c ~= 0.000016.
+Averaging c by looking at few experiment data points we find that on this machine, c ~= 0.000016.
 
 ![](https://github.com/vitalius/BinaryTree/raw/master/graphs/holmes-fig4.png)
 
