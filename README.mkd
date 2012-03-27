@@ -20,7 +20,7 @@ Dragon Rock contains 636 unique terms out of 1429 total, which means total of 63
 
 ![](https://github.com/vitalius/BinaryTree/raw/master/graphs/dragon-fig1.png)
 
-The difference between Ordered and Unordered search times is visible, however, due to all the noise from Java's VM 
+The difference between Ordered and Unordered search is visible, however, due to much noise from Java's VM 
 and unbalace in trees, it is hard to approximate the function that best fits the results. We need more data.
 
 Since the number of unique terms grows approximately linearly with the total number of terms
