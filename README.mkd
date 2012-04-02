@@ -1,12 +1,13 @@
 ## What is it?
-Attempt to empirically show the difference in time complexity between Ordered and Unordered Binary Tree search.
+Attempt to empirically show the difference in search time between Ordered and Unordered Binary Tree.
 
 ## Setup
-We're going to populate Ordered and Unordered Binary Trees with nodes that use words (strings of text) for keys. In case of Ordered tree,
+We're going to populate Ordered and Unordered Binary Trees with nodes that use words (strings of text) for keys, see Node.java. 
+In case of Ordered tree,
 String.compareTo() is used to order keys based on lexicographical order. While Unordered tree is populated by randomly
 picking a path (left/right) from root to the leaf level. See Ordered.java and Unordered.java
 
-The expected result for searching Ordered Binary Tree is O(c*log(n)), and O(c*n) for Unordered (pre-order tree traversal).
+The expected result for searching Ordered Binary Tree is \[ O(c*log(n)), and O(c*n) \] for Unordered (pre-order tree traversal).
 Where n is the number of nodes (unique terms) in the Binary Tree and c is some constant representing the beefines of my computer.
 
 ## Procedures
