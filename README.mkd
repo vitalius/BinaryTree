@@ -7,7 +7,7 @@ In case of Ordered tree,
 String.compareTo() is used to order keys based on lexicographical order. While Unordered tree is populated by randomly
 picking a path (left/right) from root to the leaf level. See Ordered.java and Unordered.java
 
-The expected result for searching Ordered Binary Tree is \[ O(c*log(n)), and O(c*n) \] for Unordered (pre-order tree traversal).
+The expected result for searching Ordered Binary Tree is O(c*log(n)), and O(c*n) for Unordered (pre-order tree traversal).
 Where n is the number of nodes (unique terms) in the Binary Tree and c is some constant representing the beefines of my computer.
 
 ## Procedures
@@ -61,4 +61,4 @@ Similarly when we zoom-in on Ordered Binary Tree data, it begins to resemble a l
 ![](https://github.com/vitalius/BinaryTree/raw/master/graphs/holmes-fig5.png)
 
 ## Wrap-up
-We have empirically shown the difference in time complexity for searching an Unordered (pre-order tree traversal) and Ordered Binary Trees.
+We have empirically shown the difference in search times between Unordered (pre-order tree traversal) and Ordered Binary Trees.
